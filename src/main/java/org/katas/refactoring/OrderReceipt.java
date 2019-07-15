@@ -10,10 +10,10 @@ public class OrderReceipt {
 
     public static final double TAX_RATE = .10;
 
-    private Order o;
+    private Order order;
 
-    public OrderReceipt(Order o) {
-        this.o = o;
+    public OrderReceipt(Order order) {
+        this.order = order;
     }
 
     public String printReceipt() {
@@ -37,8 +37,8 @@ public class OrderReceipt {
     }
 
     private void printNameAndAddress(StringBuilder output){
-        output.append(o.getCustomerName());
-        output.append(o.getCustomerAddress());
+        output.append(this.order.getCustomerName());
+        output.append(this.order.getCustomerAddress());
     }
 
     private void printLineItems(StringBuilder output){
@@ -46,7 +46,7 @@ public class OrderReceipt {
         double totSalesTx = 0d;
         double totAmountOfLineItem = 0d;
 
-        for (LineItem lineItem : o.getLineItems()) {
+        for (LineItem lineItem : this.order.getLineItems()) {
 
             printLineItem(output,lineItem);
 
