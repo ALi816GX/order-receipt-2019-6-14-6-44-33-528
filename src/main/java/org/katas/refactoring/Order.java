@@ -22,7 +22,12 @@ public class Order {
         return address;
     }
 
-    public List<LineItem> getLineItems() {
+
+    /**
+     * 根据对应的名字更改
+     * @return
+     */
+    public List<LineItem> getItemList() {
         return itemList;
     }
 
